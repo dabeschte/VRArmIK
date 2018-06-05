@@ -8,7 +8,7 @@ Using head and hand positions, the shoulders and arms are estimated to create re
 * VR Tracking to Wrist and Neck estimations (currently only optimized for Oculus Touch)
 * Estimates shoulder position and orientation 
   * 360° movement
-  * ducking 
+  * crouching 
   * distinct shoulder rotations when stretching the arms to their limits
   * arm dislocation when the distance between shoulders and controllers is larger than the virtual arm
 * Simple Arm IK Solver which connects shoulders with hand target positions
