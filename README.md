@@ -20,4 +20,5 @@ Using head and hand positions, the shoulders and arms are estimated to create re
 1. Download package from [Unity Asset Store](http://u3d.as/1d07)
 2. Add PoseManager and Avatar Prefab into your scene
 3. Run
+
 Take a look at the Demo scene to see a working demo.
