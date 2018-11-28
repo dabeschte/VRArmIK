@@ -28,4 +28,4 @@ Take a look at the Demo scene to see a working demo.
 * If the code does not compile, make sure that the Scripting Runtime is set to .NET 4.6 instead of 3.5. [Unity Manual](https://docs.unity3d.com/Manual/ScriptingRuntimeUpgrade.html)
 * Unity handles different VR Systems differently. In Oculus, the tracking positions of hands and head are always relative to the base position used when calibrating the Oculus headset. In OpenVR/SteamVR, the positions are relative to the ground. You might need to add an offset position to the "PoseManager" GameObject in order to compensate this.
 
-If you have any other questions, please open an issue in the issue tracker.
+If you have any other questions, please open an issue in the [issue tracker](https://github.com/dabeschte/VRArmIK/issues).
