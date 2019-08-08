@@ -27,7 +27,7 @@ Take a look at the Demo scene to see a working demo.
 # Tips & Tricks
 * If the code does not compile, make sure that the Scripting Runtime is set to .NET 4.6 instead of 3.5. [Unity Manual](https://docs.unity3d.com/Manual/ScriptingRuntimeUpgrade.html)
 * If shoulder is looking downwards: Unity handles different VR Systems differently. In Oculus, the tracking positions of hands and head are always relative to the base position used when calibrating the Oculus headset. In OpenVR/SteamVR, the positions are relative to the ground. <del>You might need to add an (negative) offset position to the "PoseManager" GameObject in order to compensate this. E.g. y=-1.8 should work on most platforms if you are 1.8m tall.</del>
-Update: You need to set playerHeightHmd to -1.8f in the PoseManager. (thanks to 12DrewMileham13)
-Update2: I potentially fixed this issue in the branch "platform-fixes". Since I do not have the hardware to verify this, please send me a E-Mail if this branch solved your issues so I can merge it with the master-branch!
+<b>Update</b>: You need to set playerHeightHmd to -1.8f in the PoseManager. (thanks to 12DrewMileham13)
+<b>Update 2</b>: I potentially fixed this issue in the branch "platform-fixes". Since I do not have the hardware to verify this, please send me a E-Mail if this branch solved your issues so I can merge it with the master-branch!
 
 If you have any other questions, please open an issue in the [issue tracker](https://github.com/dabeschte/VRArmIK/issues).
