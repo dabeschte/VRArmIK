@@ -169,8 +169,8 @@ namespace VRArmIK
 
 		protected virtual void rotateShoulderRight()
 		{
-			float heightDiff = vrTrackingReferences.hmd.transform.position.y;
-			float relativeHeightDiff = heightDiff / PoseManager.Instance.playerHeightHmd;
+			float heightDiff = vrTrackingReferences.hmd.transform.position.y - PoseManager.Instance.vrSystemOffsetHeight;
+			float relativeHeightDiff = -heightDiff / PoseManager.Instance.playerHeightHmd;
 
 			float headRightRotation = VectorHelpers.getAngleBetween(shoulder.transform.forward,
 										  avatarTrackingReferences.hmd.transform.forward,
@@ -178,6 +178,8 @@ namespace VRArmIK
 			float heightFactor = Mathf.Clamp(relativeHeightDiff - rightRotationStartHeight, 0f, 1f);
 			shoulderRightRotation = heightFactor * rightRotationHeightFactor;
 			shoulderRightRotation += Mathf.Clamp(headRightRotation * rightRotationHeadRotationFactor * heightFactor, 0f, 50f);
+
+            shoulderRightRotation = Mathf.Clamp(shoulderRightRotation, 0f, 50f);
 
 			Quaternion deltaRot = Quaternion.AngleAxis(shoulderRightRotation, shoulder.transform.right);
 

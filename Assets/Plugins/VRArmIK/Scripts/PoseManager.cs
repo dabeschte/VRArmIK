@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.XR;
 
 namespace VRArmIK
 {
@@ -12,11 +13,16 @@ namespace VRArmIK
 
 		public event OnCalibrateListener onCalibrate;
 
+        // Oculus uses a different reference position -> 0 is the reference head position if the user is standing in the middle of the room. 
+        // In OpenVR, the 0 position is the ground position and the user is then at (0, playerHeightHmd, 0) if he is in the middle of the room, so I need to correct this for shoulder calculation 
+        public float vrSystemOffsetHeight = 0.0f;
+
 		public const float referencePlayerHeightHmd = 1.7f;
 		public const float referencePlayerWidthWrist = 1.39f;
 		public float playerHeightHmd = 1.70f;
 		public float playerWidthWrist = 1.39f;
 		public float playerWidthShoulders = 0.31f;
+        public bool loadPlayerSizeOnAwake = false;
 
 		void OnEnable()
 		{
@@ -32,8 +38,13 @@ namespace VRArmIK
 
 		void Awake()
 		{
-			loadPlayerSize();
-		}
+            if (loadPlayerSizeOnAwake)
+            {
+                loadPlayerSize();
+            }
+            var device = XRSettings.loadedDeviceName;
+            vrSystemOffsetHeight = string.IsNullOrEmpty(device) || device == "OpenVR" ? 0 : playerHeightHmd;
+        }
 
 		void Start()
 		{
