@@ -25,6 +25,8 @@ Take a look at the Demo scene to see a working demo.
 
 
 # Tips & Tricks
-* If the code does not compile, make sure that the Scripting Runtime is set to .NET 4.6 instead of 3.5. [Unity Manual](https://docs.unity3d.com/Manual/ScriptingRuntimeUpgrade.html)
+1. If the code does not compile, make sure that the Scripting Runtime is set to .NET 4.6 instead of 3.5. [Unity Manual](https://docs.unity3d.com/Manual/ScriptingRuntimeUpgrade.html)
+2. If the shoulders are always (or never) facing downwards, try using Unity's "Camera OFfset" with tracking mode set to "Floor" and camera Y offset set to 0. If you do so, you also need to follow the next step:
+3. If the avatar is a couple of meters below your head, try setting the "Vr System Offset Height" in the PoseManager to 0.
 
 If you have any other questions, please open an issue in the [issue tracker](https://github.com/dabeschte/VRArmIK/issues).
