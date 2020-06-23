@@ -42,8 +42,6 @@ namespace VRArmIK
             {
                 loadPlayerSize();
             }
-            var device = XRSettings.loadedDeviceName;
-            vrSystemOffsetHeight = string.IsNullOrEmpty(device) || device == "OpenVR" ? 0 : playerHeightHmd;
         }
 
 		void Start()
